@@ -4,6 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import useSWR from 'swr';
 import MediaGrid from './components/MediaGrid';
 
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    // Tell Material-UI what the font-size on the html element is.
+    htmlFontSize: 10,
+  },
+});
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -48,7 +57,10 @@ const Loader = () => {
   const { data, error } = useSWR('path', fetchConfig);
   if (error) return <div>failed to load</div>;
   if (!data) return <LoadingFrontPage />;
-  return <MediaGrid assets={data.assets} />
+  return (
+    <ThemeProvider theme={theme}>
+      <MediaGrid assets={data.assets} />
+    </ThemeProvider>)
 }
 
 const fetchConfig = async (path) => {
