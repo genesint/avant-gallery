@@ -49,7 +49,7 @@ export default function MediaCard(props) {
   const { media } = props;
   return (
     <React.Fragment>
-      <Card className={classes.root}>
+      <Card className={classes.root} elevation={0}>
         <CardActionArea>
           {(media.type === 'video' ? <ReactPlayer url={`${media.url}`} /> :
             <CardMedia
