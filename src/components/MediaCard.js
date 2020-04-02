@@ -69,6 +69,7 @@ export default function MediaCard(props) {
             </Typography>
           </CardContent>
         </CardActionArea>
+        {/*
         <CardActions>
           <Button size="small" color="primary">
             Share
@@ -77,6 +78,7 @@ export default function MediaCard(props) {
             Learn More
         </Button>
         </CardActions>
+        */}
       </Card>
     </React.Fragment>
   );
