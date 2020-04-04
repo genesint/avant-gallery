@@ -64,7 +64,7 @@ const Loader = () => {
 }
 
 const fetchConfig = async (path) => {
-  const response = await fetch("https://dl.dropboxusercontent.com/s/td356ojeav7quo3/assets.json?dl=1")
+  const response = await fetch("https://dl.dropboxusercontent.com/s/0v41x5tyfm98ul3/assets.json")
   const data = await response.json();
   return { assets: data.assets }
 }
