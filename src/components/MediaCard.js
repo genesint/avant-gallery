@@ -2,10 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ReactPlayer from 'react-player';
 import Img from 'react-image';
@@ -14,19 +12,19 @@ import theme from './Theme/'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 640,
+    maxWidth: 840,
   },
   media: {
-    maxHeight: 360,
-    maxWidth: 640,
+    maxHeight: 450,
+    maxWidth: 800,
   },
   progress: {
     display: 'flex',
     '& > * + *': {
       marginLeft: theme.spacing(2),
     },
-    height: 360,
-    width: 640
+    height: 450,
+    width: 800
   },
   indicator: {
     marginLeft: "auto",
@@ -51,7 +49,7 @@ export default function MediaCard(props) {
     <React.Fragment>
       <Card className={classes.root} elevation={0}>
         <CardActionArea>
-          {(media.type === 'video' ? <ReactPlayer url={`${media.url}`} /> :
+          {(media.type === 'video' ? <ReactPlayer url={`${media.url}`} playing /> :
             <CardMedia
               component={ADLImg}
               alt={media.title}
